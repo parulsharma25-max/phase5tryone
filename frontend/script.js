@@ -17,7 +17,7 @@ askButton.addEventListener("click", async () => {
 
     try {
 
-        const response = await fetch("http://localhost:4000/ask", {
+        const response = await fetch("https://phase5tryone.onrender.com/ask", {
 
             method: "POST",
 

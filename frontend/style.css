@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -12,82 +11,231 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background:
+        radial-gradient(circle at top left, #4f46e5 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #9333ea 0%, transparent 35%),
+        #0f172a;
+
+    padding: 30px;
 }
 
 .container {
-    width: 90%;
-    max-width: 600px;
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 680px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 28px;
+
+    padding: 50px;
+
     text-align: center;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+    backdrop-filter: blur(18px);
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 10px;
-    font-size: 32px;
+    font-size: 42px;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+    color: white;
+
+    letter-spacing: -1px;
+}
+
+h1::after {
+    content: "✦";
+
+    display: inline-block;
+
+    margin-left: 10px;
+
+    color: #a78bfa;
+
+    font-size: 25px;
+
+    vertical-align: top;
 }
 
 .container > p {
-    color: #666;
-    margin-bottom: 25px;
-    font-size: 16px;
+    color: #cbd5e1;
+
+    font-size: 17px;
+
+    margin-bottom: 32px;
+
+    line-height: 1.5;
 }
 
 #question {
     width: 100%;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
+
+    min-height: 58px;
+
+    padding: 17px 20px;
+
+    border: 1px solid #475569;
+
+    border-radius: 14px;
+
+    background: rgba(15, 23, 42, 0.75);
+
+    color: white;
+
     font-size: 16px;
+
     outline: none;
-    margin-bottom: 15px;
+
+    margin-bottom: 16px;
+
+    transition: 0.3s;
+}
+
+#question::placeholder {
+    color: #94a3b8;
+}
+
+#question:hover {
+    border-color: #64748b;
 }
 
 #question:focus {
-    border-color: #667eea;
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px rgba(139, 92, 246, 0.15),
+        0 0 25px rgba(139, 92, 246, 0.12);
+
+    background: rgba(15, 23, 42, 0.9);
 }
 
 #askButton {
     width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 10px;
 
-    background: #667eea;
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6,
+        #a855f7
+    );
+
     color: white;
 
     font-size: 16px;
+
     font-weight: bold;
+
+    letter-spacing: 0.3px;
+
     cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.3);
 
     transition: 0.3s;
 }
 
 #askButton:hover {
-    background: #5568d9;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, 0.45);
+}
+
+#askButton:active {
+    transform: translateY(0);
 }
 
 #loading {
-    margin-top: 20px;
-    color: #667eea;
+    min-height: 22px;
+
+    margin-top: 22px;
+
+    color: #a78bfa;
+
+    font-size: 15px;
+
     font-weight: bold;
 }
 
 #answer {
     margin-top: 20px;
-    padding: 20px;
 
-    background: #f5f6ff;
-    border-radius: 12px;
+    padding: 24px;
+
+    min-height: 80px;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    border: 1px solid #334155;
+
+    border-radius: 16px;
 
     text-align: left;
-    color: #333;
-    line-height: 1.6;
 
-    min-height: 50px;
+    color: #e2e8f0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    word-wrap: break-word;
+
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.03);
+}
+
+#answer:empty {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .container {
+        padding: 35px 22px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .container > p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+
+    #question {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    #askButton {
+        padding: 15px;
+    }
+
+    #answer {
+        padding: 18px;
+        font-size: 15px;
+    }
 }
